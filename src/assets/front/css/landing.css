@@ -1,0 +1,45 @@
+/** Regular */
+@font-face {
+    font-family: "SF Display";
+    font-weight: 400;
+    src: url("../../font/sfui/SF-UI-Display-Regular.otf");
+}
+
+/** Thin */
+@font-face {
+    font-family: "SF Display";
+    font-weight: 300;
+    src: url("../../font/sfui/SF-UI-Display-Thin.otf");
+}
+
+/** Ultralight */
+@font-face {
+    font-family: "SF Display";
+    font-weight: 100;
+    src: url("../../font/sfui/SF-UI-Display-Ultralight.otf");
+}
+
+/** Semibold */
+@font-face {
+    font-family: "SF Text";
+    font-weight: 600;
+    src: url("../../font/sfui/SF-UI-Text-Semibold.otf");
+}
+
+/** Light */
+@font-face {
+    font-family: "SF Text";
+    font-weight: 200;
+    src: url("../../font/sfui/SF-UI-Text-Light.otf");
+}
+
+body {
+    font-family: "SF Display";
+    font-weight: 300;
+}
+
+
+
+
+
+

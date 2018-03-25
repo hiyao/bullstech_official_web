@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.0/phpunit.xsd"
+         bootstrap="./Bootstrap.php"
+         backupGlobals="true"
+         beStrictAboutCoversAnnotation="true"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         verbose="true"
+         colors="true">
+    <testsuites>
+        <testsuite name="chimei ci3 Test Suite">
+            <directory suffix="test.php" phpVersion="7.1.0" phpVersionOperator=">=">./</directory>
+            <exclude>./_ci_phpunit_test/</exclude>
+        </testsuite>
+    </testsuites>
+    <php>
+        <includePath>.</includePath>
+        <ini name="short_open_tag" value="on"/>
+    </php>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../controllers</directory>
+            <directory suffix=".php">../models</directory>
+            <directory suffix=".php">../modules</directory>
+            <directory suffix=".php">../libraries</directory>
+            <directory suffix=".php">../helpers</directory>
+            <directory suffix=".php">../hooks</directory>
+            <directory suffix=".php">../database</directory>
+            <directory suffix=".php">../flow</directory>
+            <exclude>
+                <directory suffix=".php">../libraries/excel</directory>
+                <directory suffix=".php">../libraries/PHPMailer</directory>
+                <directory suffix=".php">../libraries/tcpdf</directory>
+                <file>../libraries/Pclzip.php</file>
+                <file>../libraries/Pdf.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="build/coverage"/>
+        <!--<log type="coverage-clover" target="build/logs/clover.xml"/>-->
+        <!--<log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>-->
+    </logging>
+</phpunit>
