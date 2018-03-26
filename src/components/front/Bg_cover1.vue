@@ -1,7 +1,11 @@
 <template>
     <div class="bg-cover parallax">
         <div class="container">
-            <h2 class="col-md-4 slogan">{{ message }}</h2>
+            <h2 class="col-md-4 slogan">
+                {{ message }}
+                <br><br>
+                <b-button size="" variant="primary"><i class="fa fa-fw fa-hand-o-right"></i> Get More</b-button>
+            </h2>
         </div>
 
         <div class="content1"></div>
