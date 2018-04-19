@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url() ?>dist/src/company/images/logo-symbol.png"/>
     <title>Bulls Technology</title>
 </head>
 
-<body class="fixed-nav" id="page-top">
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
 <div id="app"></div>
-<script src="<?php echo site_url() ?>dist/home.entry.js"></script>
+<!-- built files will be auto injected -->
 </body>
+<script src="<?php echo site_url() ?>dist/customer.entry.js"></script>
 </html>

@@ -1,14 +1,19 @@
-let path = require('path')
-let webpack = require('webpack')
-let BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-let LiveReloadPlugin = require('webpack-livereload-plugin')
+let path = require('path');
+let webpack = require('webpack');
+let BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+let LiveReloadPlugin = require('webpack-livereload-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/main.js',
+    mode: process.env.NODE_ENV,
+    entry: {
+        home: './src/home/main.js',
+        customer: './src/customer/main.js'
+    },
     output: {
-        path: path.resolve(__dirname, './public/dist'),
+        path: path.resolve(__dirname, './public/dist/'),
         publicPath: './dist/',
-        filename: 'build.js'
+        filename: '[name].entry.js'
     },
     module: {
         rules: [
@@ -49,7 +54,7 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
-                    name: 'img/[name].[ext]?[hash]'
+                    name: '[path][name].[ext]?[hash]',
                 }
             },
             {
@@ -57,7 +62,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 100000,
-                    name: 'media/[name].[hash:7].[ext]'
+                    name: '[path][name].[hash:7].[ext]',
                 }
             },
             {
@@ -65,7 +70,7 @@ module.exports = {
                 loader: 'url-loader',
                 options: {
                     limit: 100000,
-                    name: 'fonts/[name].[hash:7].[ext]'
+                    name: '[path][name].[hash:7].[ext]',
                 }
             }
         ]
@@ -73,7 +78,8 @@ module.exports = {
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@': path.resolve(__dirname, './src'),
+            '@home': path.resolve(__dirname, './src/home'),
+            '@': path.resolve(__dirname, './src/customer'),
         },
         extensions: ['*', '.js', '.vue', '.json']
     },
@@ -91,7 +97,8 @@ module.exports = {
             },
             {
                 reload: false
-            })
+            }),
+        new CleanWebpackPlugin(['dist'])
     ],
 
     devServer: {
@@ -108,17 +115,12 @@ module.exports = {
         hints: false
     },
     devtool: '#eval-source-map'
-}
+};
 
 if (process.env.NODE_ENV === 'production') {
-    module.exports.devtool = '#source-map'
+    module.exports.devtool = '#source-map';
     // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: '"production"'
-            }
-        }),
         new webpack.optimize.UglifyJsPlugin({
             sourceMap: true,
             compress: {
