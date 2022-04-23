@@ -40,7 +40,7 @@ class HomeModule extends MX_Controller
      * @param string $prefix
      * @param string $message
      */
-    protected function set_message($prefix = 'global', $message)
+    protected function set_message(string $prefix = 'global', string $message = '')
     {
         $this->session->set_flashdata($prefix . '_message', $message);
     }
