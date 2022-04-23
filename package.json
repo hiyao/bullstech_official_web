@@ -8,7 +8,7 @@
     "scripts": {
         "start": "webpack --watch --mode development",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --colors --hot --content-base ./dist/",
-        "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+        "build": "export NODE_OPTIONS=--openssl-legacy-provider; cross-env NODE_ENV=production webpack --progress --hide-modules"
     },
     "dependencies": {
         "ajv": "^6.4.0",
