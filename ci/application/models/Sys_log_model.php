@@ -133,11 +133,11 @@ class Sys_log_model extends CI_Model
     /**
      * 記錄user瀏覽的路徑
      *
-     * @param $mod_id
-     * @param $mod_name
-     * @param $state
+     * @param int|null $mod_id
+     * @param string|null $mod_name
+     * @param int $state
      */
-    public function set_path_log($mod_id = null, $mod_name = null, $state)
+    public function set_path_log(?int $mod_id = null, ?string $mod_name = null, int $state = 0)
     {
         $data = array(
             'account' => $this->session->userdata('user_account'),
