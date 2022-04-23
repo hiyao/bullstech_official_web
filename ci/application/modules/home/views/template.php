@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo site_url() ?>dist/src/company/images/logo-symbol.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="dist/src/company/images/logo-symbol.png"/>
     <title>Bulls Technology</title>
+
+    <link rel="stylesheet" type="text/css" href="dist/home.style.css">
 </head>
 
 <body class="fixed-nav" id="page-top">
 <div id="app"></div>
-<script src="<?php echo site_url() ?>dist/home.entry.js"></script>
+<script src="dist/home.entry.js"></script>
 </body>
 </html>

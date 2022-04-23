@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$default_domain  = '127.0.0.1:8080';
+$default_domain  = 'www.bullstech.com.tw';
 
 if (isset($_SERVER['HTTP_HOST'])){
     $domain = $default_domain;

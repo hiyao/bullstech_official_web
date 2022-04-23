@@ -10,13 +10,6 @@ import BootstrapVue from 'bootstrap-vue'
 import CheckboxRadio from 'vue-checkbox-radio';
 //uncomment this if you use bootstrap-vue
 
-// require css
-require('./../../node_modules/bootstrap/dist/css/bootstrap.css');
-require('./../../node_modules/bootstrap-vue/dist/bootstrap-vue.css');
-//uncomment this if you use bootstrap-vue
-require('./../../node_modules/font-awesome/css/font-awesome.min.css');
-require('./assets/front/css/landing.css');
-
 // vue debug mode
 const isDebug_mode = process.env.NODE_ENV !== 'production';
 Vue.config.debug = isDebug_mode;

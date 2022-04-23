@@ -1,5 +1,9 @@
 <template>
     <div>
+        <loading
+                :show="show"
+                :label="label">
+        </loading>
         <Navigation></Navigation>
         <Bg_cover1></Bg_cover1>
         <Bg_cover2 :company_name="company_name"></Bg_cover2>
@@ -13,6 +17,7 @@
 </template>
 
 <script>
+    import loading from 'vue-full-loading'
     import Navigation from '@home/components/front/Navigation'
     import Bg_cover1 from '@home/components/front/Bg_cover1'
     import Bg_cover2 from '@home/components/front/Bg_cover2'
@@ -27,10 +32,13 @@
         name: "front",
         data() {
             return {
-                company_name: 'Bulls Technology Co., Ltd.'
+                company_name: 'Bulls Technology Co., Ltd.',
+                show: false,
+                label: 'Loading...'
             }
         },
         components: {
+            loading,
             Navigation,
             Bg_cover1,
             Bg_cover2,
